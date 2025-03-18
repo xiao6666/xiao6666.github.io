@@ -1,0 +1,370 @@
+/********** Template CSS **********/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f0e9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #777;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+/* Contact Page */
+.contact-container {
+    display: flex;
+    padding: 0 50px;
+    min-height: calc(100vh - 100px);
+}
+
+.contact-info {
+    flex: 1;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-info h1 {
+    font-size: 64px;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.form-group .required {
+    font-size: 14px;
+    color: #666;
+    margin-left: 5px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    color: #333;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+    border-radius: 20px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #aaa;
+}
+
+.submit-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-info {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-form {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul {
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .contact-info h1 {
+        font-size: 48px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    padding: 0 50px;
+    height: calc(100vh - 100px);
+    min-height: 600px;
+}
+
+/* Slideshow Container */
+.image-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slideshow Navigation */
+.slideshow-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.slideshow-nav button {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slideshow-nav button.active {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Slideshow Arrows */
+.prev-arrow,
+.next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    color: #333;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.prev-arrow {
+    left: 20px;
+}
+
+.next-arrow {
+    right: 20px;
+}
+
+.prev-arrow:hover,
+.next-arrow:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.text-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.text-section h1 {
+    font-size: 64px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.text-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.cta-button:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-section,
+    .text-section {
+        width: 100%;
+    }
+
+    .image-section {
+        height: 50vh;
+    }
+
+    .text-section {
+        padding: 50px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul {
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .text-section h1 {
+        font-size: 42px;
+    }
+}

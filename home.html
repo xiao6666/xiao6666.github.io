@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Sanctum</title>
+    <!-- <style>
+        /* Reset CSS */
+
+    </style> -->
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Maison Sanctum</a>
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="image-section">
+            <div class="slideshow">
+                <div class="slide active">
+                    <!-- Replace with actual image paths -->
+                    <img src="https://via.placeholder.com/800x600?text=Image+A" alt="Image A">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x600?text=Image+B" alt="Image B">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x600?text=Image+C" alt="Image C">
+                </div>
+                <button class="prev-arrow">←</button>
+                <button class="next-arrow">→</button>
+                <div class="slideshow-nav">
+                    <button class="nav-dot active" data-index="0"></button>
+                    <button class="nav-dot" data-index="1"></button>
+                    <button class="nav-dot" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+        <div class="text-section">
+            <h1>About<br>our company</h1>
+            <p>With a commitment to excellence and innovative craftsmanship, we dedicate ourselves to transforming
+                creative visions into reality. Our team of seasoned designers leverages years of experience to deliver
+                outstanding solutions tailored to your unique needs.</p>
+            <a href="#" class="cta-button">LEARN MORE</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.nav-dot');
+            const prevArrow = document.querySelector('.prev-arrow');
+            const nextArrow = document.querySelector('.next-arrow');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                // Show the current slide
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            // Next slide
+            function nextSlide() {
+                const next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }
+
+            // Previous slide
+            function prevSlide() {
+                const prev = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prev);
+            }
+
+            // Event listeners
+            nextArrow.addEventListener('click', nextSlide);
+            prevArrow.addEventListener('click', prevSlide);
+
+            // Dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', function () {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showSlide(index);
+                });
+            });
+
+            // Auto-rotate slides (optional)
+            const slideInterval = setInterval(nextSlide, 5000);
+
+            // Pause auto-rotation when hovering over slideshow
+            const slideshow = document.querySelector('.slideshow');
+            slideshow.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        });
+    </script>
+</body>
+
+</html>
