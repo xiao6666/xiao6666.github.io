@@ -199,6 +199,19 @@ img {
     display: block;
 }
 
+/* Logo styling */
+.logo {
+    width: 360px;
+    height: 180px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
 /* Main Content */
 .main-content {
     display: flex;
