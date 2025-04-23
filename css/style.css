@@ -190,6 +190,15 @@ textarea.form-control {
     }
 }
 
+/* Image Autoscale*/
+img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /* or 'contain' */
+    display: block;
+}
+
 /* Main Content */
 .main-content {
     display: flex;
