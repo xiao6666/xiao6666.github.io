@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Matching | Maison Sanctum</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Additional styles specific to the price matching page */
+    .price-matching-hero {
+      height: 50vh;
+      background-image: url('images/price-match-bg.jpg');
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .price-matching-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-accent);
+      opacity: 0.4;
+    }
+
+    .price-match-content {
+      padding: 80px 0;
+    }
+
+    .process-container {
+      margin-top: 60px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .step-card {
+      background-color: var(--color-white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--color-secondary);
+      opacity: 0.5;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+
+    .step-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: var(--color-accent);
+    }
+
+    .testimonials {
+      background-color: var(--color-off-white);
+      padding: 80px 0;
+    }
+
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background-color: var(--color-white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial-content {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .testimonial-content::before {
+      content: "\201C"; /* Unicode for opening double quote */
+      font-family: var(--font-heading);
+      font-size: 60px;
+      color: var(--color-secondary);
+      opacity: 0.5;
+      position: absolute;
+      top: -20px;
+      left: -15px;
+      z-index: 0;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-details {
+      margin-left: 15px;
+    }
+
+    .author-name {
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    .author-location {
+      font-size: 14px;
+      color: var(--color-text-light);
+    }
+
+    .author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--color-secondary);
+      overflow: hidden;
+    }
+
+    .author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .faq-section {
+      padding: 80px 0;
+    }
+
+    .faq-items {
+      margin-top: 40px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      background-color: var(--color-white);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    .faq-answer {
+      padding: 0 20px 20px;
+      color: var(--color-text-light);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .cta-section {
+      padding: 60px 0;
+      background-color: var(--color-secondary);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: var(--color-accent);
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      color: var(--color-text);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    @media (min-width: 768px) {
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonial-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header will be inserted here -->
+  <div id="header-placeholder"></div>
+
+  <!-- Price Matching Hero -->
+  <section class="price-matching-hero">
+    <div class="hero-content">
+      <h1>Luxury Without Compromise</h1>
+      <p>Experience superior quality at unparalleled value with our exclusive price matching guarantee</p>
+    </div>
+  </section>
+
+  <!-- Price Matching Content -->
+  <section class="price-match-content" id="price-matching">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Price Matching Promise</h2>
+        <p>At Maison Sanctum, we believe luxury should be accessible without compromise. Present us with any
+          competitor's quote, and we'll not only match it with equivalent or superior materials, but we'll also provide
+          an additional 20% discount.</p>
+      </div>
+
+      <div class="content-columns">
+        <div class="content-text">
+          <p>Our artisans have spent decades perfecting their craft, sourcing the finest textiles from around the world,
+            and developing relationships with premium suppliers. This allows us to offer extraordinary quality while
+            maintaining competitive pricing.</p>
+          <p>When you choose Maison Sanctum, you're investing in handcrafted window treatments that transform your
+            living spaces with timeless elegance. Our price matching guarantee ensures you receive the finest quality at
+            exceptional value.</p>
+          <p>Each fabric in our collection undergoes rigorous testing for durability, light filtration, and aesthetic
+            appeal. We're confident that our materials and craftsmanship surpass industry standards, which is why we can
+            proudly offer our price matching guarantee with an additional 20% savings.</p>
+        </div>
+      </div>
+
+      <div class="process-container">
+        <div class="section-header">
+          <h2>How Our Price Matching Works</h2>
+          <p>A simple process to ensure you receive exceptional value without sacrificing quality</p>
+        </div>
+
+        <div class="process-steps">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Submit Your Quote</h3>
+            <p>Share a detailed competitor's quote with our design consultants, including fabric specifications,
+              dimensions, and styling details.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Expert Evaluation</h3>
+            <p>Our textile specialists will analyze the quote and identify equivalent or superior materials from our
+              exclusive collection.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Custom Proposal</h3>
+            <p>Within 48 hours, we'll present you with a personalized proposal featuring our premium alternatives at 20%
+              below the competitor's price.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Client Experiences</h2>
+        <p>Discover how our price matching has delighted clients while exceeding their expectations</p>
+      </div>
+
+      <div class="testimonial-cards">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>I had received a quote from another custom drapery company and was prepared to proceed until I discovered
+              Maison Sanctum's price match. Not only did they offer a superior silk blend, but the 20% savings allowed
+              me to add matching cushions to complete my living room transformation.</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="images/testimonial-1.jpg" alt="Emily Richardson">
+            </div>
+            <div class="author-details">
+              <div class="author-name">Emily Richardson</div>
+              <div class="author-location">Boston, Massachusetts</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>The quality difference was immediately apparent. While the price was indeed 20% lower than my original
+              quote, the craftsmanship and fabric richness of Maison Sanctum's curtains have elevated our master bedroom
+              beyond what I thought possible.</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-image">
+              <img src="images/testimonial-2.jpg" alt="Jonathan & Claire Bennett">
+            </div>
+            <div class="author-details">
+              <div class="author-name">Jonathan & Claire Bennett</div>
+              <div class="author-location">Greenwich, Connecticut</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our price matching guarantee</p>
+      </div>
+
+      <div class="faq-items">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            What information do I need to provide for a price match?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>To process your price match request, we require a detailed quote from the competitor that includes the
+              fabric specifications, dimensions, hardware details, and styling elements. For the most accurate
+              comparison, please provide fabric swatches if available.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            How long does the price matching process take?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our design consultants typically complete the evaluation and present a custom proposal within 48 hours of
+              receiving your competitor's quote. For complex designs or specialty fabrics, this process may take up to
+              72 hours.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            What if you don't have an exact match for the competitor's fabric?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>In cases where an exact match isn't available, we'll offer alternatives of equivalent or superior quality
+              that maintain the aesthetic and functional properties you desire. Our textile specialists carefully select
+              options that enhance your design vision while honoring our price match guarantee.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            Does the price match apply to all competitors?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our price matching applies to quotes from legitimate custom window treatment providers with verifiable
+              business operations. We reserve the right to exclude quotes from liquidation sales, closeouts, or
+              businesses that don't provide custom, made-to-measure window treatments.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            Can I combine the price match with other promotions?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our 20% price match discount represents our best possible value and cannot be combined with other
+              promotional offers, seasonal discounts, or loyalty rewards. However, our complimentary design consultation
+              and installation services remain included with your price match order.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Experience Unparalleled Value Today</h2>
+      <p>Submit your competitor's quote and discover the perfect balance of luxury and value that only Maison Sanctum
+        can provide.</p>
+      <button class="btn btn-primary">Request Price Match</button>
+    </div>
+  </section>
+
+  <!-- Footer will be inserted here -->
+  <div id="footer-placeholder"></div>
+
+  <script src="script.js"></script>
+  <script src="includes.js"></script>
+  <script>
+    // FAQ accordion functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const icon = question.querySelector('i');
+
+          // Toggle answer visibility
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+          }
+        });
+      });
+
+      // Open the first FAQ item by default
+      setTimeout(() => {
+        const firstQuestion = document.querySelector('.faq-question');
+        if (firstQuestion) {
+          const firstAnswer = firstQuestion.nextElementSibling;
+          const firstIcon = firstQuestion.querySelector('i');
+
+          firstAnswer.style.maxHeight = firstAnswer.scrollHeight + "px";
+          firstIcon.classList.remove('fa-chevron-down');
+          firstIcon.classList.add('fa-chevron-up');
+        }
+      }, 500); // Small delay to ensure DOM is fully loaded
+    });
+  </script>
+</body>
+
+</html>
