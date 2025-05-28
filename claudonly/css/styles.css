@@ -135,21 +135,70 @@ header {
   object-fit: contain;
 }
 
+/* Improved desktop navigation */
 .desktop-nav {
   display: none;
+  align-items: center;
+  gap: 5px;
+  /* Add spacing between links */
 }
 
 .desktop-nav a {
-  margin-left: 25px;
-  color: var(--color-text-light);
+  position: relative;
+  padding: 10px 18px;
+  /* More padding for better click targets */
+  margin-left: 0;
+  /* Remove old margin */
+  color: var(--color-text);
   font-size: 14px;
+  font-weight: 500;
+  /* Slightly bolder */
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
+  /* Reduce letter spacing slightly */
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+/* Highlight effect on hover */
+.desktop-nav a::before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
 }
 
 .desktop-nav a:hover {
+  color: var(--color-primary);
+  background-color: var(--color-off-white);
+}
+
+.desktop-nav a:hover::before {
+  width: calc(100% - 36px);
+}
+
+/* Special styling for "Why Us" */
+.desktop-nav a.highlight {
+  background-color: var(--color-secondary);
   color: var(--color-accent);
-  font-weight: 500;
+}
+
+.desktop-nav a.highlight:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Visual separator */
+.nav-separator {
+  width: 1px;
+  height: 24px;
+  background-color: var(--color-secondary);
+  margin: 0 10px;
 }
 
 .mobile-menu-btn {
@@ -448,3 +497,4 @@ footer {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+

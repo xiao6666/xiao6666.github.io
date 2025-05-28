@@ -11,10 +11,11 @@ function getHeader() {
             </a>
           </div>
           <nav class="desktop-nav">
+            <a href="why-us.html">Why Us</a>
             <a href="index.html#catalog">Catalog</a>
             <a href="price-matching.html">Price Matching</a>
-            <a href="why-us.html">Why Us</a>
             <a href="hardware.html">Hardware</a>
+            <div class="nav-separator"></div>
             <a href="index.html#about-us">About Us</a>
             <a href="index.html#contact">Contact</a>
           </nav>
@@ -24,10 +25,11 @@ function getHeader() {
         </div>
       </div>
       <nav class="mobile-nav" id="mobile-nav">
+        <a href="why-us.html">Why Us</a>
         <a href="index.html#catalog">Catalog</a>
         <a href="price-matching.html">Price Matching</a>
-        <a href="why-us.html">Why Us</a>
         <a href="hardware.html">Hardware</a>
+        <div class="nav-separator"></div>
         <a href="index.html#about-us">About Us</a>
         <a href="index.html#contact">Contact</a>
       </nav>
