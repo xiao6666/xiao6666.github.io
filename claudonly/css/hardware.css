@@ -1,0 +1,472 @@
+/* Hardware page specific styles */
+.hardware-hero {
+  height: 60vh;
+  background-image: url('images/hardware-hero.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.hardware-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-accent);
+  opacity: 0.4;
+}
+
+.hardware-intro {
+  padding: 80px 0;
+  background-color: var(--color-off-white);
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.intro-text p {
+  margin-bottom: 20px;
+  color: var(--color-text-light);
+  font-size: 16px;
+}
+
+.intro-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item {
+  background-color: var(--color-white);
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aluminum-benefits {
+  padding: 80px 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.benefit-card {
+  background-color: var(--color-white);
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+}
+
+.benefit-icon i {
+  font-size: 32px;
+  color: var(--color-accent);
+}
+
+.benefit-card h3 {
+  font-size: 22px;
+  color: var(--color-accent);
+  margin-bottom: 15px;
+}
+
+.benefit-card p {
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.hardware-collection {
+  padding: 80px 0;
+  background-color: var(--color-off-white);
+}
+
+.collection-grid {
+  margin-top: 50px;
+}
+
+.hardware-category {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.category-image {
+  height: 300px;
+  background-color: var(--color-secondary);
+  overflow: hidden;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-content {
+  padding: 40px;
+}
+
+.category-content h3 {
+  font-size: 26px;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+.category-content>p {
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.feature-list {
+  margin-bottom: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.feature-item i {
+  color: var(--color-primary);
+  margin-right: 12px;
+  font-size: 14px;
+}
+
+.feature-item span {
+  color: var(--color-text-light);
+  font-size: 15px;
+}
+
+.finish-options h4,
+.hook-types h4 {
+  color: var(--color-accent);
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.finish-swatches {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.finish-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.finish-swatch:hover {
+  transform: scale(1.1);
+}
+
+.finish-swatch.satin-nickel {
+  background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+}
+
+.finish-swatch.brushed-bronze {
+  background: linear-gradient(135deg, #cd7f32, #a0522d);
+}
+
+.finish-swatch.matte-black {
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+}
+
+.finish-swatch.polished-chrome {
+  background: linear-gradient(135deg, #e8e8e8, #d0d0d0);
+}
+
+.finish-swatch.antique-brass {
+  background: linear-gradient(135deg, #b8860b, #8b7355);
+}
+
+.hook-options {
+  display: grid;
+  gap: 15px;
+}
+
+.hook-option {
+  padding: 15px;
+  background-color: var(--color-off-white);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.hook-option strong {
+  color: var(--color-accent);
+}
+
+.technical-specs {
+  padding: 80px 0;
+}
+
+.specs-comparison {
+  margin-top: 50px;
+}
+
+.comparison-table {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.table-header>div {
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.property-col {
+  text-align: left !important;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row>div {
+  padding: 20px 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.table-row .property-col {
+  text-align: left;
+  justify-content: flex-start;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.maison-col.advantage {
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.steel-col,
+.brass-col {
+  color: var(--color-text-light);
+}
+
+.installation-care {
+  padding: 80px 0;
+  background-color: var(--color-off-white);
+}
+
+.care-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.care-card {
+  background-color: var(--color-white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.care-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.care-icon i {
+  font-size: 28px;
+  color: var(--color-white);
+}
+
+.care-card h3 {
+  font-size: 24px;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+.care-card p {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.care-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.care-card ul li {
+  color: var(--color-text-light);
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.care-card ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .intro-content {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .care-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hardware-category {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .hardware-category:nth-child(even) .category-image {
+    order: 2;
+  }
+
+  .hardware-category:nth-child(even) .category-content {
+    order: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .comparison-table {
+    font-size: 16px;
+  }
+
+  .table-header {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .comparison-table {
+    font-size: 12px;
+  }
+
+  .table-header {
+    font-size: 12px;
+  }
+
+  .table-header>div,
+  .table-row>div {
+    padding: 15px 10px;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1.5fr 1fr 0.8fr 0.8fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
